@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            flex-direction: column;
+            background: linear-gradient(to right, #ddeefc, #c2e9fb);
+        }
+
+        .header {
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            margin-top: 20px;
+            animation: slideIn 1.5s ease-out;
+        }
+
+        /* Animation for header */
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .main-content {
+            display: flex;
+            flex: 1;
+            margin-top: 20px;
+        }
+
+        .left-half {
+            flex: 1;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .left-half video {
+            width: 80%; /* Adjust the width to make it smaller */
+            max-height: 400px; /* Set a maximum height for the video */
+            object-fit: cover;
+        }
+
+        .right-half {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            background: transparent;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 350px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #007bff;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .options {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .options button {
+            background: #28a745;
+            margin-top: 10px;
+        }
+
+        .options button:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Learn -o- Hub</div>
+    <div class="main-content">
+        <div class="left-half">
+            <video autoplay muted loop>
+                <source src="111.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="right-half">
+            <div class="container">
+                <h1>Welcome to Career Hub</h1>
+                <form id="userForm">
+                    <input type="text" id="name" placeholder="Enter your Name" required>
+                    <input type="number" id="age" placeholder="Enter your Age" required>
+                    <input type="text" id="jobProfile" placeholder="Enter your Job Profile" required>
+                    <button type="submit">Submit</button>
+                </form>
+
+                <div class="options" id="options">
+                    <button onclick="window.location.href='learn.html'">Learn</button>
+                    <button onclick="window.location.href='jobs.html'">Jobs</button>
+                    <button onclick="window.location.href='hiring.html'">Internships</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("userForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            document.getElementById("options").style.display = "block";
+        });
+    </script>
+</body>
+</html>

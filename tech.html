@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Courses</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollreveal/4.0.9/scrollreveal.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #ddeefc; /* Light blue background */
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            color: #007bff; /* Blue color */
+            margin-top: 40px;
+            font-weight: bold;
+            animation: slideIn 1.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .courses-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .course-box {
+            width: 220px;
+            padding: 15px;
+            text-align: center;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .course-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .course-box img {
+            width: 100%;
+            height: 120px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .course-box h2 {
+            font-size: 20px;
+            margin: 10px 0;
+            color: #007bff; /* Blue color for course title */
+        }
+
+        .course-box p {
+            font-size: 14px;
+            color: #777;
+        }
+
+        .course-box button {
+            margin-top: 10px;
+            padding: 8px 16px;
+            background: #007bff; /* Blue button */
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .course-box button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        /* ScrollReveal Configuration */
+        ScrollReveal().reveal('.course-box', {
+            duration: 1000,
+            origin: 'bottom',
+            distance: '50px',
+            easing: 'ease-in-out',
+            interval: 200
+        });
+    </style>
+</head>
+<body>
+    <div class="course-page">
+        <h1>Tech Courses</h1>
+        <div class="courses-container">
+            <div class="course-box">
+                <img src="3img.png" alt="Web Development">
+                <h2>Web Development</h2>
+                <p>Company: Google</p>
+                <button onclick="openYouTube('https://youtu.be/R6RX2Zx96fE?si=ZRTOSoMHF2M5YjI0')">Watch Now</button>
+            </div>
+            <div class="course-box">
+                <img src="11img.jpg" alt="Artificial Intelligence">
+                <h2>Artificial Intelligence</h2>
+                <p>Company: OpenAI</p>
+                <button onclick="openYouTube('https://youtu.be/JMUxmLyrhSk?si=9n8y6pFkU0eaLvpa')">Watch Now</button>
+            </div>
+            <div class="course-box">
+                <img src="5img.jpg" alt="Blockchain">
+                <h2>Blockchain</h2>
+                <p>Company: IBM</p>
+                <button onclick="openYouTube('https://youtu.be/SyVMma1IkXM?si=fw5uJ2isNHzOArJR')">Watch Now</button>
+            </div>
+            <div class="course-box">
+                <img src="6img.jpg" alt="Cloud Computing">
+                <h2>Cloud Computing</h2>
+                <p>Company: Amazon AWS</p>
+                <button onclick="openYouTube('https://youtu.be/EN4fEbcFZ_E?si=vKmbNSLX98yU7i_K')">Watch Now</button>
+            </div>
+            <div class="course-box">
+                <img src="7img.jpg" alt="Ethical Hacking">
+                <h2>Ethical Hacking</h2>
+                <p>Company: Cisco</p>
+                <button onclick="openYouTube('https://youtu.be/2eLJNBroFrg?si=GIq8adH83mcVw3Uj')">Watch Now</button>
+            </div>
+            <div class="course-box">
+                <img src="8img.jpg" alt="UI/UX Design">
+                <h2>UI/UX Design</h2>
+                <p>Company: Adobe</p>
+                <button onclick="openYouTube('https://youtu.be/EaeW8MP06So?si=XZ0-z_Ix8uZjZncb')">Watch Now</button>
+            </div>
+            <div class="course-box">
+                <img src="9img.jpg" alt="Machine Learning">
+                <h2>Machine Learning</h2>
+                <p>Company: Nvidia</p>
+                <button onclick="openYouTube('https://youtu.be/GwIo3gDZCVQ?si=NMC28w-rfGvwWbAt')">Watch Now</button>
+            </div>
+            <div class="course-box">
+                <img src="10img.jpg" alt="Cybersecurity">
+                <h2>Cybersecurity</h2>
+                <p>Company: Palo Alto Networks</p>
+                <button onclick="openYouTube('https://youtu.be/9aB3blo_Ctc?si=oXRmk1yEowfz3AqB')">Watch Now</button>
+            </div>
+            <div class="course-box">
+                <img src="4img.jpg" alt="Data Science">
+                <h2>Data Science</h2>
+                <p>Company: Microsoft</p>
+                <button onclick="openYouTube('https://youtu.be/ua-CiDNNj30?si=CKh-y6D5J1JeU9gB')">Watch Now</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openYouTube(url) {
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>

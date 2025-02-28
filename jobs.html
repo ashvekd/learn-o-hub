@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for Jobs</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollreveal/4.0.9/scrollreveal.min.js"></script>
+    <style>
+        body {
+            background-color: #ddeefc; /* Light blue background */
+            color: #333;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .jobs-page {
+            text-align: center;
+            width: 100%;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #007bff; /* Blue color for the title */
+            font-weight: bold;
+            animation: slideIn 1.5s ease-out;
+        }
+
+        .jobs-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .job-box {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+            color: black;
+            cursor: pointer;
+            animation: zoomIn 0.5s ease-out;
+        }
+
+        .job-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .job-box img {
+            width: 100%;
+            max-height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .job-box h2 {
+            font-size: 20px;
+            color: #007bff; /* Blue color for job title */
+        }
+
+        .job-box p {
+            color: #777;
+        }
+
+        .job-box button {
+            background-color: #007bff; /* Blue button */
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .job-box button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        #apply-form {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+            padding: 30px;
+            background-color: #fff;
+            color: #333;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        #apply-form input[type="file"] {
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        #apply-form button {
+            background-color: #007bff; /* Blue button for submit */
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        #apply-form button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoomIn {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="jobs-page">
+        <h1>Apply for Jobs</h1>
+        <div class="jobs-container">
+            <div class="job-box">
+                <img src="17img.jpg" alt="Google">
+                <h2>Google</h2>
+                <p>Salary: $120,000</p>
+                <p>Cybersecurity</p>
+                <button onclick="showApplyForm('Google', 'Cybersecurity')">Apply Now</button>
+            </div>
+            <div class="job-box">
+                <img src="18img.png" alt="Microsoft">
+                <h2>Microsoft</h2>
+                <p>Salary: $100,000</p>
+                <p>Data Analyst</p>
+                <button onclick="showApplyForm('Microsoft', 'Data Analyst')">Apply Now</button>
+            </div>
+            <div class="job-box">
+                <img src="19img.jpg" alt="Amazon">
+                <h2>Amazon</h2>
+                <p>Salary: $110,000</p>
+                <p>Software Engineer</p>
+                <button onclick="showApplyForm('Amazon', 'Software Engineer')">Apply Now</button>
+            </div>
+            <div class="job-box">
+                <img src="20img.png" alt="Tesla">
+                <h2>Tesla</h2>
+                <p>Salary: $130,000</p>
+                <p>AI Researcher</p>
+                <button onclick="showApplyForm('Tesla', 'AI Researcher')">Apply Now</button>
+            </div>
+            <div class="job-box">
+                <img src="21img.png" alt="IBM">
+                <h2>IBM</h2>
+                <p>Salary: $105,000</p>
+                <p>Blockchain Developer</p>
+                <button onclick="showApplyForm('IBM', 'Blockchain Developer')">Apply Now</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="apply-form">
+        <h2>Upload Your CV</h2>
+        <form id="cvForm">
+            <input type="file" id="cvUpload" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function showApplyForm(company, job) {
+            document.getElementById("apply-form").style.display = "block";
+        }
+
+        document.getElementById("cvForm").addEventListener("submit", function(event){
+            event.preventDefault();
+            window.location.href = "thankyou.html";
+        });
+
+        ScrollReveal().reveal('.job-box', {
+            duration: 1000,
+            origin: 'bottom',
+            distance: '50px',
+            easing: 'ease-in-out',
+            interval: 200
+        });
+    </script>
+</body>
+</html>
